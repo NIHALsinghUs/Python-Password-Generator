@@ -1,37 +1,32 @@
-# ----- BMI Calculator -----
+# Importing random module
+import random
 
-print("----- BMI Calculator -----")
+# List containing alphabets, numbers and special characters
+char = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+        'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+        '0','1','2','3','4','5','6','7','8','9',
+        '!','@','#','$','%','^','&','*']
 
-# Take weight input from user (in kg)
-weight = float(input("Enter your weight : "))
+# Empty list to store password characters
+password = []
 
-# Take height input from user (in cm)
-height = float(input("Enter your height in CM : "))
+# Taking password length input from user
+length = int(input("Enter the Length : "))
 
-# Convert height from cm to meters
-height = height / 100
+# Loop runs according to the entered length
+for i in range(length):
 
-# Calculate BMI using formula: weight / (height * height)
-bmi = weight / (height * height)
+    # Selecting random character and adding to password list
+    password.append(random.choice(char))
 
-# Round BMI to 2 decimal places
-bmi = round(bmi, 2)
+# Converting list into string
+pass_list = "".join(password)
 
-# Print calculated BMI
-print("Your BMI is:", bmi)
+# Printing heading
+print("----- Generated Password -----")
 
-# Check if BMI is underweight
-if bmi < 18.5:
-    print("Category: Underweight")
+# Printing generated password
+print("Your generated password is:",pass_list)
 
-# Check if BMI is normal weight
-elif bmi < 25:
-    print("Category: Normal")
-
-# Check if BMI is overweight
-elif bmi < 30:
-    print("Category: Overweight")
-
-# If none of the above, then obese
-else:
-    print("Category: Obese")
+# Success message
+print("Successfully Generated")

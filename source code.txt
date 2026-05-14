@@ -1,33 +1,37 @@
-import random
+# ----- BMI Calculator -----
 
-a = ["stone","paper","scissors"]
+print("----- BMI Calculator -----")
 
-sps = random.choice(a)
+# Take weight input from user (in kg)
+weight = float(input("Enter your weight : "))
 
-print("----- Stone Paper Scissors -----\n")
+# Take height input from user (in cm)
+height = float(input("Enter your height in CM : "))
 
-user_choice = input("Choose stone, paper, or scissors : ")
+# Convert height from cm to meters
+height = height / 100
 
-if (user_choice == sps):
-    print("You choose :",user_choice,"\n- Draw - \n","Computer chose :",sps)
+# Calculate BMI using formula: weight / (height * height)
+bmi = weight / (height * height)
 
-elif (user_choice == "stone" and sps == "paper"):
-    print("You choose :",user_choice,"\n - Computer wins - \n","Computer chose :",sps)
+# Round BMI to 2 decimal places
+bmi = round(bmi, 2)
 
-elif (user_choice == "paper" and sps == "stone"):
-    print("You choose :",user_choice,"\n - You win - \n","Computer chose :",sps)
+# Print calculated BMI
+print("Your BMI is:", bmi)
 
-elif (user_choice == "scissors" and sps == "stone"):
-    print("You choose :",user_choice,"\n - Computer wins - \n","Computer chose :",sps)
+# Check if BMI is underweight
+if bmi < 18.5:
+    print("Category: Underweight")
 
-elif (user_choice == "stone" and sps == "scissors"):
-    print("You choose :",user_choice,"\n - You win - \n","Computer chose :",sps)
+# Check if BMI is normal weight
+elif bmi < 25:
+    print("Category: Normal")
 
-elif (user_choice == 'paper' and sps == 'scissors'):
-    print("You choose :",user_choice,"\n - Computer wins - \n","Computer chose :",sps)
+# Check if BMI is overweight
+elif bmi < 30:
+    print("Category: Overweight")
 
-elif (user_choice == 'scissors' and sps == 'paper'):
-    print("You choose :",user_choice,"\n - You win - \n","Computer chose :",sps)
-
-print("----- Game Over -----")
-print("=== Thanks For Playing ===")
+# If none of the above, then obese
+else:
+    print("Category: Obese")

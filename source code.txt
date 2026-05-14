@@ -1,0 +1,33 @@
+import random
+
+a = ["stone","paper","scissors"]
+
+sps = random.choice(a)
+
+print("----- Stone Paper Scissors -----\n")
+
+user_choice = input("Choose stone, paper, or scissors : ")
+
+if (user_choice == sps):
+    print("You choose :",user_choice,"\n- Draw - \n","Computer chose :",sps)
+
+elif (user_choice == "stone" and sps == "paper"):
+    print("You choose :",user_choice,"\n - Computer wins - \n","Computer chose :",sps)
+
+elif (user_choice == "paper" and sps == "stone"):
+    print("You choose :",user_choice,"\n - You win - \n","Computer chose :",sps)
+
+elif (user_choice == "scissors" and sps == "stone"):
+    print("You choose :",user_choice,"\n - Computer wins - \n","Computer chose :",sps)
+
+elif (user_choice == "stone" and sps == "scissors"):
+    print("You choose :",user_choice,"\n - You win - \n","Computer chose :",sps)
+
+elif (user_choice == 'paper' and sps == 'scissors'):
+    print("You choose :",user_choice,"\n - Computer wins - \n","Computer chose :",sps)
+
+elif (user_choice == 'scissors' and sps == 'paper'):
+    print("You choose :",user_choice,"\n - You win - \n","Computer chose :",sps)
+
+print("----- Game Over -----")
+print("=== Thanks For Playing ===")
